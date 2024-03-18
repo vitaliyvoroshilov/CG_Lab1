@@ -59,13 +59,16 @@
             расширениеToolStripMenuItem = new ToolStripMenuItem();
             сужениеToolStripMenuItem = new ToolStripMenuItem();
             открытиеToolStripMenuItem = new ToolStripMenuItem();
+            закрытиеToolStripMenuItem = new ToolStripMenuItem();
+            gradToolStripMenuItem = new ToolStripMenuItem();
+            topHatToolStripMenuItem = new ToolStripMenuItem();
             действиеToolStripMenuItem = new ToolStripMenuItem();
             назадToolStripMenuItem = new ToolStripMenuItem();
             вперёдToolStripMenuItem = new ToolStripMenuItem();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             progressBar1 = new ProgressBar();
             button1 = new Button();
-            закрытиеToolStripMenuItem = new ToolStripMenuItem();
+            blackHatToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -266,7 +269,7 @@
             // 
             // матморфологияToolStripMenuItem
             // 
-            матморфологияToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { расширениеToolStripMenuItem, сужениеToolStripMenuItem, открытиеToolStripMenuItem, закрытиеToolStripMenuItem });
+            матморфологияToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { расширениеToolStripMenuItem, сужениеToolStripMenuItem, открытиеToolStripMenuItem, закрытиеToolStripMenuItem, gradToolStripMenuItem, topHatToolStripMenuItem, blackHatToolStripMenuItem });
             матморфологияToolStripMenuItem.Name = "матморфологияToolStripMenuItem";
             матморфологияToolStripMenuItem.Size = new Size(180, 22);
             матморфологияToolStripMenuItem.Text = "Матморфология";
@@ -291,6 +294,27 @@
             открытиеToolStripMenuItem.Size = new Size(180, 22);
             открытиеToolStripMenuItem.Text = "Открытие";
             открытиеToolStripMenuItem.Click += открытиеToolStripMenuItem_Click;
+            // 
+            // закрытиеToolStripMenuItem
+            // 
+            закрытиеToolStripMenuItem.Name = "закрытиеToolStripMenuItem";
+            закрытиеToolStripMenuItem.Size = new Size(180, 22);
+            закрытиеToolStripMenuItem.Text = "Закрытие";
+            закрытиеToolStripMenuItem.Click += закрытиеToolStripMenuItem_Click;
+            // 
+            // gradToolStripMenuItem
+            // 
+            gradToolStripMenuItem.Name = "gradToolStripMenuItem";
+            gradToolStripMenuItem.Size = new Size(180, 22);
+            gradToolStripMenuItem.Text = "Grad";
+            gradToolStripMenuItem.Click += gradToolStripMenuItem_Click;
+            // 
+            // topHatToolStripMenuItem
+            // 
+            topHatToolStripMenuItem.Name = "topHatToolStripMenuItem";
+            topHatToolStripMenuItem.Size = new Size(180, 22);
+            topHatToolStripMenuItem.Text = "TopHat";
+            topHatToolStripMenuItem.Click += topHatToolStripMenuItem_Click;
             // 
             // действиеToolStripMenuItem
             // 
@@ -340,12 +364,12 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // закрытиеToolStripMenuItem
+            // blackHatToolStripMenuItem
             // 
-            закрытиеToolStripMenuItem.Name = "закрытиеToolStripMenuItem";
-            закрытиеToolStripMenuItem.Size = new Size(180, 22);
-            закрытиеToolStripMenuItem.Text = "Закрытие";
-            закрытиеToolStripMenuItem.Click += закрытиеToolStripMenuItem_Click;
+            blackHatToolStripMenuItem.Name = "blackHatToolStripMenuItem";
+            blackHatToolStripMenuItem.Size = new Size(180, 22);
+            blackHatToolStripMenuItem.Text = "BlackHat";
+            blackHatToolStripMenuItem.Click += blackHatToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -408,5 +432,8 @@
         private ToolStripMenuItem сужениеToolStripMenuItem;
         private ToolStripMenuItem открытиеToolStripMenuItem;
         private ToolStripMenuItem закрытиеToolStripMenuItem;
+        private ToolStripMenuItem gradToolStripMenuItem;
+        private ToolStripMenuItem topHatToolStripMenuItem;
+        private ToolStripMenuItem blackHatToolStripMenuItem;
     }
 }

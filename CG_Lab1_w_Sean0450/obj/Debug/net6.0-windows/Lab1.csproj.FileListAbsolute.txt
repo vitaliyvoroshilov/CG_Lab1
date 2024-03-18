@@ -14,3 +14,4 @@ C:\Новая папка\repos\CG_Lab1_w_Sean0450\obj\Debug\net6.0-windows\refin
 C:\Новая папка\repos\CG_Lab1_w_Sean0450\obj\Debug\net6.0-windows\Lab1.pdb
 C:\Новая папка\repos\CG_Lab1_w_Sean0450\obj\Debug\net6.0-windows\Lab1.genruntimeconfig.cache
 C:\Новая папка\repos\CG_Lab1_w_Sean0450\obj\Debug\net6.0-windows\ref\Lab1.dll
+C:\Новая папка\repos\CG_Lab1_w_Sean0450\obj\Debug\net6.0-windows\Lab1.sourcelink.json

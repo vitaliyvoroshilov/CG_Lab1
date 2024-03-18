@@ -19,20 +19,24 @@ namespace Lab1
         //protected int[,] tool = { { 1, 1, 1 },
         //                          { 1, 1, 1 },
         //                          { 1, 1, 1 } };
-        
+
 
         protected override Color CalculateNewPixelColour(Bitmap sourceimage, int x, int y)
         {
             if ((x >= n/2) && (x < sourceimage.Width - n/2) && (y >= n/2) && (y < sourceimage.Height - n/2))
             {
-                int min = 255;
+                int minR = 255, minG = 255, minB = 255;
                 for (int j = 0; j < n; j++)
                     for (int i = 0; i < n; i++)
                     {
-                        if ((tool[i, j] == 1) && (sourceimage.GetPixel(x, y).R < min))
-                            min = sourceimage.GetPixel(x + i - n / 2, y + j - n / 2).R;
+                        if ((tool[i, j] == 1) && (sourceimage.GetPixel(x, y).R < minR))
+                            minR = sourceimage.GetPixel(x + i - n / 2, y + j - n / 2).R;
+                        if ((tool[i, j] == 1) && (sourceimage.GetPixel(x, y).G < minG))
+                            minG = sourceimage.GetPixel(x + i - n / 2, y + j - n / 2).G;
+                        if ((tool[i, j] == 1) && (sourceimage.GetPixel(x, y).B < minB))
+                            minB = sourceimage.GetPixel(x + i - n / 2, y + j - n / 2).B;
                     }
-                return Color.FromArgb(min, min, min);
+                return Color.FromArgb(minR, minG, minB);
             }
             return sourceimage.GetPixel(x, y);
         }

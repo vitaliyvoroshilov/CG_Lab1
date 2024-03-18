@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
-using System.ComponentModel;
 
 namespace Lab1
 {
-    abstract class Filters
+    abstract class Filters2
     {
+        protected abstract Color CalculateNewPixelColour(Bitmap sourceimage1, Bitmap sourceimage2, int x, int y);
 
-        protected abstract Color CalculateNewPixelColour(Bitmap sourceimage, int x, int y);
-
-        public Bitmap processImage(Bitmap sourceimage, BackgroundWorker worker)
+        public Bitmap processImage(Bitmap sourceimage1, Bitmap sourceimage2, BackgroundWorker worker)
         {
-            Bitmap resultImage = new Bitmap(sourceimage.Width, sourceimage.Height);
+            Bitmap resultImage = new Bitmap(sourceimage1.Width, sourceimage1.Height);
             if (this is Gistogram || this is PerfectReflector)
             {
-                Counter.work(sourceimage);
+                Counter.work(sourceimage1);
             }
-            for (int i =0; i < sourceimage.Width; i++)
+            for (int i = 0; i < sourceimage1.Width; i++)
             {
                 if (worker != null)
                 {
@@ -28,10 +26,10 @@ namespace Lab1
                     if (worker.CancellationPending)
                         return null;
                 }
-                for (int j = 0; j < sourceimage.Height; j++)
+                for (int j = 0; j < sourceimage1.Height; j++)
                 {
-                    int source = sourceimage.GetPixel(i, j).R;
-                    resultImage.SetPixel(i, j, CalculateNewPixelColour(sourceimage, i, j));
+                    int source1 = sourceimage1.GetPixel(i, j).R;
+                    resultImage.SetPixel(i, j, CalculateNewPixelColour(sourceimage1, sourceimage2, i, j));
                 }
             }
             return resultImage;

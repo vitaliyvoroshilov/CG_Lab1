@@ -232,5 +232,55 @@ namespace Lab1
             Erosion filter2 = new Erosion();
             backgroundWorker1.RunWorkerAsync(filter2);
         }
+
+        private void gradToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dilation filter1 = new Dilation();
+            imgs[imgState + 1] = filter1.processImage(imgs[imgState], null);
+            imgState += 1;
+            imgSize += 1;
+            Erosion filter2 = new Erosion();
+            imgs[imgState + 1] = filter2.processImage(imgs[imgState - 1], null);
+            imgState += 1;
+            imgSize += 1;
+            ImageSubtraction filter3 = new ImageSubtraction();
+            imgs[imgState + 1] = filter3.processImage(imgs[imgState - 1], imgs[imgState], null);
+            imgState += 1;
+            imgSize += 1;
+            pictureBox1.Image = imgs[imgState];
+            pictureBox1.Refresh();
+        }
+
+        private void topHatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dilation filter1 = new Dilation();
+            imgs[imgState + 1] = filter1.processImage(imgs[imgState], null);
+            imgState += 1;
+            imgSize += 1;
+            Erosion filter2 = new Erosion();
+            imgs[imgState] = filter2.processImage(imgs[imgState], null);
+            ImageSubtraction filter3 = new ImageSubtraction();
+            imgs[imgState + 1] = filter3.processImage(imgs[imgState - 1], imgs[imgState], null);
+            imgState += 1;
+            imgSize += 1;
+            pictureBox1.Image = imgs[imgState];
+            pictureBox1.Refresh();
+        }
+
+        private void blackHatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Erosion filter1 = new Erosion();
+            imgs[imgState + 1] = filter1.processImage(imgs[imgState], null);
+            imgState += 1;
+            imgSize += 1;
+            Dilation filter2 = new Dilation();
+            imgs[imgState] = filter2.processImage(imgs[imgState], null);
+            ImageSubtraction filter3 = new ImageSubtraction();
+            imgs[imgState + 1] = filter3.processImage(imgs[imgState], imgs[imgState - 1], null);
+            imgState += 1;
+            imgSize += 1;
+            pictureBox1.Image = imgs[imgState];
+            pictureBox1.Refresh();
+        }
     }
 }
